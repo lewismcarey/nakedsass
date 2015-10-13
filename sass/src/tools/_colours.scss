@@ -1,0 +1,32 @@
+// !COLOR FUNCTIONS
+
+// !TOC
+// 1. Get Color - get a color value from a color map.
+// 
+// $colors: (
+//  blue: #0000FF,
+//  red: (
+//    base: #FF0000,
+//    light: #EEEEFF,
+//    dark: #5555FF
+//  )
+//);
+
+@function get-color( $color, $shade: 'base', $map : $colors ){
+  // check color exists
+  @if (map-has-key($map, $color)) {
+    $value: map-get($map, unquote($color));
+    // check if color or map
+    @if type-of($value) == color {
+      // return color
+      @return $value;
+    }
+    // check shade of color exists
+    @if (map-has-key($value, $shade)) {
+      // return shade of color
+      @return map-get($value, $shade);
+    }
+  } 
+  // else do nothing
+  @return null;
+}
