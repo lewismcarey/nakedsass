@@ -18,12 +18,14 @@ In order to meet these, we need to make this thing be two things - naked and eas
 
 ## Structure
 
-/src
-	/components - 		
-	/grids - 
-	/lib - 
-	/tools - 
-/styles
-_config.scss
-main.scss
-old-ie.scss
+	/src
+		/components - 		
+		/grids - 
+		/lib - 
+		/tools - 
+	/styles
+	_config.scss
+	main.scss
+	old-ie.scss
+
+
