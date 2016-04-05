@@ -1,0 +1,17 @@
+// !IMAGES
+
+// Source: https://github.com/inuitcss/base.images
+
+img {
+
+    max-width: 100%;
+    font-style: italic;
+
+}
+
+img[width],
+img[height] {
+
+    max-width: none;
+
+}
