@@ -1,0 +1,27 @@
+// Columns
+.l-cols {
+  @extend %grp;
+
+  &--2 {
+    .l-col {
+      width: 50%;
+    }
+  }
+
+  &--3 {
+    .l-col {
+      width: 33.33%;
+    }
+  }
+
+  &--4 {
+    .l-col {
+      width: 25%;
+    }
+  }
+
+}
+
+.l-col {
+   float: left;
+}
