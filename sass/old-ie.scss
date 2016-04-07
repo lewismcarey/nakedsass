@@ -1,0 +1,6 @@
+// !SERVE OLD IE A STATIC STYLESHEET
+
+$mq-responsive:        false;
+$mq-static-breakpoint: wide; // compiles all mqs until wide E.g. desktop version
+
+@import 'main';

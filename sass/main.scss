@@ -4,8 +4,8 @@
 // 1.  Config
 // 2.  Vendor
 // 3.  Base
-// 3.  Tools
-// 4.  Components
+// 3.  Tools (functions & mixins)
+// 4.  Components (layouts, patterns and common styles)
 // 5.  Styles
 
 // !Config
@@ -23,20 +23,25 @@
 @import "base/forms";       // FORMS, FIELDSET, SELECT, INPUT, TEXTAREA
 @import "base/lists";       // UL, OL, LI
 @import "base/tables";      // TABLE, THEAD, TH, TBODY, TR, TD
+@import "base/hr";          // HR
 // !Tools
 @import "tools/extend-sass";// extending map and list functions
 @import "tools/fonts";      // font styleguide function & font scale
 @import "tools/colours";    // get color from color map
 @import "tools/zindex";     // z-index simplification
 // !Components
-@import "components/media";
-@import "components/center";
+@import "components/helper-classes";
+// !--Layouts
 @import "components/grid";
 @import "components/cols";
+@import "components/center";
 @import "components/ratio";
+// !--Patterns
 @import "components/hero";
-@import "components/buttons";
+@import "components/media";
 @import "components/nav";
+// !--Common styles
+@import "components/buttons";
 @import "components/tables";
 @import "components/forms";
 @import "components/icons";
@@ -47,19 +52,14 @@
 @import "styles/header"
 @import "styles/main"
 @import "styles/footer"
-
 // !--Blocks
 //e.g. @import "styles/block-blockhandle"
-
 // !--Stacks
 //e.g. @import "styles/stack-stackhandle"
-
 // !--Components
 //e.g. @import "styles/componenthandle"
-
 // !--Pages
 //e.g. @import "styles/page-pagehandle"
-
 // !--Themes
 //e.g. @import "styles/theme"
 

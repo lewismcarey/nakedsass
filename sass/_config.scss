@@ -108,3 +108,6 @@ $fonts: (
 $opacity:   0.5;
 $tint:      40%;
 $base-unit: 20px;
+
+$grid-padding: $base-unit;
+$grid-offset:  $grid-padding * -1;
