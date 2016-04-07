@@ -11,8 +11,9 @@
 // !Config
 @import "setup";  // basic site variables (breakpoints, colours, fonts, units)
 // !Vendor
-@import "vendor/normalize"; // normalize
-@import "vendor/mq";        // SASS MQ mixins
+@import "vendor/normalize";   // normalize
+@import "vendor/mq";          // SASS MQ mixins
+@import "vendor/css3-mixins"; // CSS3 Prefixing
 // !Base
 @import "base/global";      // *, HTML, BODY
 @import "base/headings";    // H1, H2, H3, H4, H5, H6
@@ -23,8 +24,10 @@
 @import "base/lists";       // UL, OL, LI
 @import "base/tables";      // TABLE, THEAD, TH, TBODY, TR, TD
 // !Tools
-@import "tools/colours";
-@import "tools/type";
+@import "tools/extend-sass";// extending map and list functions
+@import "tools/fonts";      // font styleguide function & font scale
+@import "tools/colours";    // get color from color map
+@import "tools/zindex";     // z-index simplification
 // !Components
 @import "components/media";
 @import "components/center";
@@ -32,7 +35,7 @@
 @import "components/cols";
 @import "components/ratio";
 @import "components/hero";
-@import "components/buttons/styles";
+@import "components/buttons";
 @import "components/nav";
 @import "components/tables";
 @import "components/forms";
@@ -46,16 +49,16 @@
 @import "styles/footer"
 
 // !--Blocks
-//e.g. @import "styles/block-profile"
+//e.g. @import "styles/block-blockhandle"
 
 // !--Stacks
-//e.g. @import "styles/stack-profiles"
+//e.g. @import "styles/stack-stackhandle"
 
 // !--Components
-//e.g. @import "styles/component-slider"
+//e.g. @import "styles/componenthandle"
 
 // !--Pages
-//e.g. @import "styles/page-home"
+//e.g. @import "styles/page-pagehandle"
 
 // !--Themes
 //e.g. @import "styles/theme"
