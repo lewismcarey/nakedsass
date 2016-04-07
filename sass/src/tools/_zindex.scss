@@ -1,0 +1,61 @@
+// Z-Index Simplified
+
+// Divides z-indexing into 2 layers (allows more complex config map)
+// 1. over  as simple usage 1  with args range 2 - 10
+// 2. above as simple usage 90 with args 91 - 99
+
+// CONFIG
+
+$z-levels: (
+    over: 1,
+    above: 90
+) !default;
+
+
+// FUNCTION
+
+// z-index: z(string, _number_);
+// @returns number - calculated z-index value
+@function z($level, $up: 0) {
+  @if map-has-key($z-levels, unquote($level)) {
+    @if (type-of($up) == number){
+      @if ($up <= 9) {
+        @return map-get($z-levels, $level) + $up;
+      }
+      @warn "`#{$up}` is not within range [1-9]";
+      @return map-get($z-levels, $level) + 9;
+    }
+    @warn "Sorry, but `#{$up}` is not type == number";
+    @return 0;
+  }
+  @warn "Sorry, but `#{$level}` is not in map `#{$levels}`";
+  @return 0;
+}
+
+// MIXIN
+
+// @include z(string, _number_);
+// @returns string - z-index: value pair
+@mixin z($level, $up: 0) {
+  z-index: z($level, $up);
+}
+
+// BASIC USAGE
+
+// z-index: z(over);
+// z-index: z(over, [1-9]);
+// z-index: z(above);
+// z-index: z(above, [1-9]);
+
+// ADVANCED USAGE
+
+// Provide a more complex map of indices for more intricate control
+// $z-levels: (
+//     offcanvas: 1,
+//     lightbox:  500,
+//     dropdown:  10,
+//     tooltip:   20
+// );
+// @include z(offcanvas); // outputs z-index: 1
+// @include z(offcanvas, 2); // outputs z-index: 2
+// @include z(lightbox);  // outputs z-index: 500

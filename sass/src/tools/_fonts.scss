@@ -1,0 +1,102 @@
+// !Fonts
+
+// !TOC
+//
+// 1. Font Do
+// 2. Font Scale
+
+
+// 1. Font Do
+// Walks throught the font map outputting the relevant font styles for the site
+
+// _config.scss
+//
+// $fonts: (
+//  element|classhandle: (
+//    stack: $fontstack-string // string
+//    scale: (sasslist, of, Font Scale, args) // list
+//    styles: ( // map
+//      property: value,
+//      property: value
+//    )
+//  )
+// )
+
+// MIXIN
+
+@mixin font-do($fonts: $fonts) {
+
+  @each $font, $props in $fonts {               // loop the map
+    $selector: if(index($tags,$font), '', '.'); // decide if element or class
+    #{$selector}#{$font} {                      // begin the css selector
+      @each $prop, $propval in $props {         // loop the stack/scale/styles props
+        @if type-of($propval) == string {       // if string we assume stack (we could check string val)
+          font-family: unquote($propval);
+        }
+        @if type-of($propval) == list {         // if list we assume scale
+          @include responsive-font($propval...);// output fontscale (passing arglist)
+        }
+        @if type-of($propval) == map {          // if map either styles (or scale map)
+          @each $mod, $modval in $propval {     // loop the map
+            @if type-of($modval) != list {      // if not a list then it's raw styles
+               #{$mod} : $modval;
+            }
+            @if type-of($modval) == list {      // if is a list then it's font scales
+              @if $mod == 'default' {           // output fontscale (passing arglist)
+                @include responsive-font($modval...); // output fontscale (passing arglist)
+              }
+              @if $mod != 'default' {           // if not default then create modifier class
+                &--#{$mod} {
+                    @include responsive-font($modval...); // output fontscale (passing arglist)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// 2. Font Scale
+/// Viewport sized typography with minimum and maximum values
+
+/// @author Eduardo Boucas (@eduardoboucas)
+///
+/// @param {Number}   $responsive  - Viewport-based size
+/// @param {Number}   $min         - Minimum font size (px)
+/// @param {Number}   $max         - Maximum font size (px)
+///                                  (optional)
+/// @param {Number}   $fallback    - Fallback for viewport-
+///                                  based units (optional)
+///
+/// @example scss - 5vw font size (with 50px fallback),
+///                 minumum of 35px and maximum of 150px
+/// @include responsive-font(5vw, 35px, 150px, 50px);
+
+// MIXIN
+
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+
+  @if $fallback {
+    font-size: $fallback;
+  }
+
+  font-size: $responsive;
+}
