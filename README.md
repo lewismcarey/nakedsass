@@ -14,7 +14,7 @@
 * be intuitive, useful and reusable
 * include base styles layouts/patterns/components and tools
 
-In order to meet these, we need to make this thing be two things - naked and easy.
+In order to meet these, we need to make this thing be two things - naked and easy (like your mom).
 
 ## Structure
 
