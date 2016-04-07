@@ -2,12 +2,12 @@
 
 // !TOC
 //
-// 1. MQ Custom
+// 1. Breakpoints (MQ Custom)
 // 2. Colors
 // 3. Typography
 // 4. Units
 
-//! 1. MQ Custom
+//! 1. Breakpoints (MQ Custom)
 //  http://sass-mq.github.io/sass-mq/
 
 $mobile:  320px;
@@ -22,10 +22,89 @@ $mq-breakpoints: (
     tabdesk: $tabdesk,
     desktop: $desktop,
     wide:    $wide,
-
     // Tweaks
     desktopSmall: 810px,
     mobileLandscape: 480px,
 
 );
 //$ipad-landscape: '(min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)';
+
+
+// 2. Colors
+
+// 2.1 Variables
+
+// Base Colors
+$c-black: #000000;
+$c-grey:  #cccccc;
+$c-white: #ffffff;
+// Brand colours
+$c-red:   #e40134;
+$c-yellow:#cf0e5c;
+$c-blue:  #cf0e5c;
+// Web Colours
+$c-green:  #00aba8;
+$c-purple: #38b5aa;
+
+// 2.2 Colour Maps
+
+// Color Scheme Base
+$color-scheme--brand: (
+    cs-red:    $c-black,
+    cs-yellow: $c-grey,
+    cs-blue:   $c-white
+);
+// Color Scheme Web
+$color-scheme--web: (
+    cs-red: $sc-red,
+    cs-cyan: $c-cyan,
+    cs-stone: $c-stone,
+    cs-yellow: $c-yellow
+);
+
+$all-colors: map_merge($color-scheme--brand, $color-scheme--web);
+
+
+// 3. Typography
+
+// 3.1 Font Stacks
+
+$font-stack-bold:    "Arial, sans-serif";
+$font-stack-regular: "Arial, sans-serif";
+$font-stack-light:   "Arial, sans-serif";
+$font-stack-default: "Arial, sans-serif";
+
+// 3.2 Font Map
+// tools/_fonts.scss
+
+$fonts: (
+    f-heading: (
+        stack: $font-stack-bold,
+        scale: (
+            default: (5vw, 38px, 72px, 48px),
+            large: (5vw, 60px, 72px, 60px)
+        ),
+        styles: (
+            font-weight: normal,
+            text-transform: uppercase,
+        )
+    ),
+    f-title: (
+        stack: $font-stack-regular,
+        scale: (2vw, 24px, 32px, 24px),
+        styles: (
+            font-weight: normal
+        )
+    ),
+    f-body: (
+        stack: $font-stack-regular,
+        scale: (1vw, 14px, 18px, 14px)
+    )
+);
+
+
+// 4. Units
+
+$opacity:   0.5;
+$tint:      40%;
+$base-unit: 20px;

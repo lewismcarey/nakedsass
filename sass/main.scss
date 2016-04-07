@@ -9,7 +9,7 @@
 // 5.  Styles
 
 // !Config
-@import "setup";  // basic site variables (breakpoints, colours, fonts, units)
+@import "config";  // basic site variables (breakpoints, colours, fonts, units)
 // !Vendor
 @import "vendor/normalize";   // normalize
 @import "vendor/mq";          // SASS MQ mixins
