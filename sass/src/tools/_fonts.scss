@@ -23,7 +23,7 @@
 // )
 
 // MIXIN
-$tags: ('p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'li') !default;
+$tags: ('p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'li', 'ol') !default;
 @mixin font-do($fonts: $fonts) {
 
   @each $font, $props in $fonts {               // loop the map
