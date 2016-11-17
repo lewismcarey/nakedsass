@@ -56,10 +56,8 @@ $color-scheme--brand: (
 );
 // Color Scheme Web
 $color-scheme--web: (
-    cs-red: $sc-red,
-    cs-cyan: $c-cyan,
-    cs-stone: $c-stone,
-    cs-yellow: $c-yellow
+    cs-green: $c-green,
+    cs-purple: $c-purple
 );
 
 $all-colors: map_merge($color-scheme--brand, $color-scheme--web);
@@ -105,9 +103,14 @@ $fonts: (
 
 // 4. Units
 
+$base-unit: 20px;
 $opacity:   0.5;
 $tint:      40%;
-$base-unit: 20px;
 
-$grid-padding: $base-unit;
+// padding & gutter
+$padding: $base-unit;
+$gutter: $base-unit/2;
+
+// grid padding and grid--pull offset
+$grid-padding: $padding;
 $grid-offset:  $grid-padding * -1;
