@@ -38,3 +38,4 @@ In order to meet these, we need to make this thing be two things - naked and eas
 * REMOVED Library/_Defaults.scss - the main.scss files handles inclusions of partials well enough
 * UPDATED main.scss to reflect updates
 * UPDATED SASS MQ to latest version n.b. uses $until instead of $to (because? marginalia)
+* UPDATED Prefixes to align with adopted preference , helpers to tools not components
