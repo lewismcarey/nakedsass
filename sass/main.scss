@@ -7,65 +7,69 @@
 // 3.  Tools (functions & mixins)
 // 4.  Components (layouts, patterns and common styles)
 // 5.  Styles
+// 6.  Print
 
 // !Config
 @import "config";  // basic site variables (breakpoints, colours, fonts, units)
 // !Vendor
-@import "vendor/normalize";   // normalize
-@import "vendor/mq";          // SASS MQ mixins
-@import "vendor/css3-mixins"; // CSS3 Prefixing
+@import "src/vendor/normalize";   // normalize
+@import "src/vendor/mq";          // SASS MQ mixins
+@import "src/vendor/css3-mixins"; // CSS3 Prefixing
 // !Base
-@import "base/global";      // *, HTML, BODY
-@import "base/headings";    // H1, H2, H3, H4, H5, H6
-@import "base/paragraphs";  // P
-@import "base/blockquotes"; // BLOCKQUOTE, CITE
-@import "base/images";      // IMG, FIGURE
-@import "base/forms";       // FORMS, FIELDSET, SELECT, INPUT, TEXTAREA
-@import "base/lists";       // UL, OL, LI
-@import "base/tables";      // TABLE, THEAD, TH, TBODY, TR, TD
-@import "base/hr";          // HR
+@import "src/base/global";      // *, HTML, BODY
+@import "src/base/headings";    // H1, H2, H3, H4, H5, H6
+@import "src/base/paragraphs";  // P
+@import "src/base/blockquotes"; // BLOCKQUOTE, CITE
+@import "src/base/images";      // IMG, FIGURE
+@import "src/base/forms";       // FORMS, FIELDSET, SELECT, INPUT, TEXTAREA
+@import "src/base/lists";       // UL, OL, LI
+@import "src/base/tables";      // TABLE, THEAD, TH, TBODY, TR, TD
+@import "src/base/hr";          // HR
 // !Tools
-@import "tools/extend-sass";// extending map and list functions
-@import "tools/fonts";      // font styleguide function & font scale
-@import "tools/colours";    // get color from color map
-@import "tools/zindex";     // z-index simplification
+@import "src/tools/extend-sass";// extending map and list functions
+@import "src/tools/fonts";      // font styleguide function & font scale
+@import "src/tools/colours";    // get color from color map
+@import "src/tools/zindex";     // z-index simplification
+@import "src/tools/helpers";    // helper classes
 // !Components
-@import "components/helper-classes";
+
 // !--Layouts
-@import "components/grid";
-@import "components/cols";
-@import "components/center";
-@import "components/ratio";
-// !--Patterns
-@import "components/hero";
-@import "components/media";
-@import "components/nav";
-// !--Common styles
-@import "components/buttons";
-@import "components/tables";
-@import "components/forms";
-@import "components/icons";
+@import "src/components/_l_grid";
+@import "src/components/_l_cols";
+@import "src/components/_l_center";
+@import "src/components/_l_ratio";
+@import "src/components/_l_flex";
+// !--Patterns & components
+@import "src/components/_c_hero";
+@import "src/components/_c_media";
+@import "src/components/_c_nav";
+@import "src/components/_c_alerts";
+@import "src/components/_c_buttons";
+@import "src/components/_c_tables";
+@import "src/components/_c_forms";
+@import "src/components/_c_icons";
+
 
 // !Styles
-@import "styles/global"
+@import "styles/global";
 // !--Main Layout
-@import "styles/header"
-@import "styles/main"
-@import "styles/footer"
+@import "styles/header";
+@import "styles/main";
+@import "styles/footer";
 // !--Blocks
-//e.g. @import "styles/block-block_handle"
+//e.g. @import "styles/_b_block-handle"
 // !--Stacks
-//e.g. @import "styles/stack-stack_handle"
+//e.g. @import "styles/_s_stack-handle"
 // !--Components
-//e.g. @import "styles/component-component_handle"
+//e.g. @import "styles/_c_buttons"
 // !--Pages
-//e.g. @import "styles/page-page_handle"
+//e.g. @import "styles/_p_page-handle"
 // !--Themes
-//e.g. @import "styles/theme"
-
+//e.g. @import "styles/_themes"
 // !--Overrides (make use of the cascade)
-//e.g. @import "styles/ie-8"
-//e.g. @import "styles/ext-icons"
+//e.g. @import "styles/_o_ie-8"
+//e.g. @import "styles/_o_icons"
+
 
 // !--Print
-@import "base/print"; // print styles
+@import "src/base/print"; // print styles
