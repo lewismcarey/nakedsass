@@ -30,7 +30,8 @@
 @import "src/tools/fonts";      // font styleguide function & font scale
 @import "src/tools/colours";    // get color from color map
 @import "src/tools/zindex";     // z-index simplification
-@import "src/tools/helpers";    // helper classes
+@import "src/tools/helpers";    // helper classes & !importants
+
 // !Components
 
 // !--Layouts
@@ -48,7 +49,6 @@
 @import "src/components/_c_tables";
 @import "src/components/_c_forms";
 @import "src/components/_c_icons";
-
 
 // !Styles
 @import "styles/global";
