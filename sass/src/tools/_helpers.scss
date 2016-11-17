@@ -72,7 +72,7 @@
 
     display: block;
 
-    @include mq($to: tablet) {
+    @include mq($until: tablet) {
 
         display: none !important;
 
@@ -87,7 +87,7 @@
 
     display: block;
 
-    @include mq($from: tablet, $to: desktop) {
+    @include mq($from: tablet, $until: desktop) {
 
         display: none !important;
 
